@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
+      
+      <body>
+      
+        <script src="https://meet.jit.si/external_api.js"></script>
+      
+        <script>
+          const params = new URLSearchParams(window.location.search)
+          var domain = "meet.jit.si";
+          var options = {
+            roomName: params.get('room'),
+            width: screen.width,
+            height: screen.height,
+            parentNode: undefined,
+            configOverwrite: {
+                disableDeepLinking: true
+            },
+            interfaceConfigOverwrite: {
+              filmStripOnly: true
+            }
+
+          }
+          var api = new JitsiMeetExternalAPI(domain, options);
+        </script>
+      </body>
+</html>
